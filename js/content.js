@@ -1,0 +1,38 @@
+$(document).ready(function() {
+    var duration = 0;
+    var language = "<?php echo $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2); ?>"
+    
+    function loadContent() {
+        if (language == "fr") {
+            $("#fr").css("font-weight", "bold")
+            $("#en").css("font-weight", "normal")
+        } else {
+            $("#fr").css("font-weight", "normal")
+            $("#en").css("font-weight", "bold")
+        }
+        $.getJSON("content/general.json", function(json) {
+            $.each(json, function(i, value) {
+                if (language == "fr")
+                    $(value.id).fadeOut(duration, function() { $(this).html(value.fr) }).fadeIn()
+                else
+                    $(value.id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
+            });
+        });
+    }
+
+    function update(lan) {
+        duration = 300;
+        language = lan;
+        loadContent()
+    }
+
+    $("#fr").click(function() {
+        update("fr")
+    });
+
+    $("#en").click(function() {
+        update("en")
+    });
+
+    loadContent()
+});

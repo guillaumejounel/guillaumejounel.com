@@ -1,15 +1,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Guillaume Jounel - Who am I</title>
+    <title id="title">Guillaume Jounel - Who am I?</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/p5.js"></script>
     <script language="javascript" type="text/javascript" src="js/particle_system.js"></script>
+    <script language="javascript" type="text/javascript" src="js/content.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
-
     <div id="bg"></div>
     <p id="name">Guillaume <span>Jounel</span></p>
     <div class="blurred">
@@ -34,40 +34,5 @@
                 <div class="article"></div>
             </div>
         </div>
-
-        <script>
-        var duration = 0;
-
-        var language = "<?php echo $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2); ?>"
-        function loadContent() {
-            if (language == "fr") {
-                $("#fr").css("font-weight", "bold")
-                $("#en").css("font-weight", "normal")
-            } else {
-                $("#fr").css("font-weight", "normal")
-                $("#en").css("font-weight", "bold")
-            }
-            $.getJSON("content/general.json", function(json) {
-                $.each(json, function(i, value) {
-                    if (language == "fr")
-                        $(value.id).fadeOut(duration, function() { $(this).html(value.fr) }).fadeIn()
-                    else
-                        $(value.id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
-                });
-            });
-        }
-        function update(lan) {
-            duration = 300;
-            language = lan;
-            loadContent()
-        }
-        loadContent()
-        $("#fr").click(function() {
-            update("fr")
-        });
-        $("#en").click(function() {
-            update("en")
-        });
-        </script>
     </body>
     </html>
