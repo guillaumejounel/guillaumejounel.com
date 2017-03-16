@@ -89,12 +89,16 @@ body {
     right:10px;
 }
 
+#fr, #en {
+    cursor: pointer;
+}
+
 .content {
-    position:relative;
-    display:block;
-    margin:auto;
-    z-index:100;
-    width:70%;
+    position: relative;
+    display: block;
+    margin: auto;
+    z-index: 100;
+    width: 70%;
 }
 
 .content .column {
