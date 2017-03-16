@@ -1,17 +1,14 @@
-[
-    {
-        "id": "#title",
+{
+    "#title" : {
         "fr": "Guillaume Jounel - Qui suis-je ?",
         "en": "Guillaume Jounel - Who am I?"
     },
-    {
-        "id": "#status",
+    "#status" : {
         "fr": "<i class='fa fa-lightbulb-o' aria-hidden='true'></i> En recherche d'un stage de six mois en développement informatique (Sept 2017 - Fev 2018)",
         "en": "<i class='fa fa-lightbulb-o' aria-hidden='true'></i> Looking for a Six-Month Software Engineer Internship (Sept 2017 - Feb 2018)"
     },
-    {
-        "id": "#introduction",
+    "#introduction" : {
         "fr": "Bonjour ! Je m'appelle Guillaume.<br/>Je suis actuellement à la recherche d'un stage, n'hésitez pas à me contacter pour plus d'informations. Je suis autodidacte, créatif et j'aime résoudre des problèmes ! À bientôt ! :)",
         "en": "Hi! I'm Guillaume.<br/>I'm currently looking for an internship, please feel free to contact me. Fast learner, creative & self-challenging!<br/>See you soon! :)"
     }
-]
+}

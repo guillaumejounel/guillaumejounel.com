@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var duration = 0;
-    var language = "<?php echo $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2); ?>"
-    
+    var language = "<?php echo $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2); ?>" == "fr" ? "fr" : "en"
+
     function loadContent() {
         if (language == "fr") {
             $("#fr").css("font-weight", "bold")
@@ -11,11 +11,11 @@ $(document).ready(function() {
             $("#en").css("font-weight", "bold")
         }
         $.getJSON("content/general.json", function(json) {
-            $.each(json, function(i, value) {
+            $.each(json, function(id, value) {
                 if (language == "fr")
-                    $(value.id).fadeOut(duration, function() { $(this).html(value.fr) }).fadeIn()
+                    $(id).fadeOut(duration, function() { $(this).html(value.fr) }).fadeIn()
                 else
-                    $(value.id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
+                    $(id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
             });
         });
     }
@@ -26,12 +26,11 @@ $(document).ready(function() {
         loadContent()
     }
 
-    $("#fr").click(function() {
-        update("fr")
-    });
-
-    $("#en").click(function() {
-        update("en")
+    $("#language span").click(function() {
+        id = $(this).attr('id')
+        update(id)
+        window.history.pushState(document.title,document.title,id);
+        return false
     });
 
     loadContent()
