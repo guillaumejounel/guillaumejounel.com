@@ -37,7 +37,7 @@ body {
 
 #name {
     margin:30px 0px 30px 0px;
-    font-size:250%;
+    font-size:225%;
     position:relative;
     text-align:center;
     width:100%;
@@ -84,6 +84,11 @@ body {
     background-color:rgba(255,255,255,0.5);
 }
 
+.blurred p #language {
+    position:absolute;
+    right:10px;
+}
+
 .content {
     position:relative;
     display:block;
@@ -101,6 +106,10 @@ body {
 @media only screen and (min-width: 600px) {
     .content .column {
         width:50%;
+    }
+    #name {
+        margin:40px 0px 30px 0px;
+        font-size:300%;
     }
 }
 
@@ -123,7 +132,6 @@ body {
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .blur, .article {
-
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
         background-color: rgba(255,255,255,0.1);
