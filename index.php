@@ -18,19 +18,20 @@ else
 </head>
 <body>
     <div id="bg"></div>
-    <p id="name">Guillaume <span>Jounel</span></p>
-    <div class="blurred">
-        <div id="header">
-            <p>
-                <span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
-                <span id="status"><?php echo $json["#status"][$lang]; ?></span>
-                <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
-            </p>
-
+    <div id="fixed">
+        <p id="name">Guillaume <span>Jounel</span></p>
+        <div class="blurred">
+            <div id="header">
+                <p>
+                    <span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
+                    <span id="status"><?php echo $json["#status"][$lang]; ?></span>
+                    <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
+                </p>
+            </div>
+            <div class="blur"></div>
         </div>
-        <div class="blur"></div>
     </div>
-    <div class="content">
+    <div id="content">
         <div class="column">
             <div class="article"></div>
             <div class="article"></div>

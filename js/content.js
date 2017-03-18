@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    $('#fixed').css('position', 'fixed');
+    $('#content').css('top', $('#fixed').outerHeight());
+    console.log($('#fixed').outerHeight())
     var duration = 0;
     var url = window.location.toString().split("/");
     var language = (url[url.indexOf("guillaumejounel.com")+1] || navigator.language || navigator.userLanguage).slice(0,2) == "fr" ? "fr" : "en"
