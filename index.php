@@ -20,11 +20,14 @@ else
     <div id="bg"></div>
     <p id="name">Guillaume <span>Jounel</span></p>
     <div class="blurred">
-        <p>
-            <span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
-            <span id="status"><?php echo $json["#status"][$lang]; ?></span>
-            <span id="introduction"><?php echo $json["#introduction"][$lang]; ?></span>
-        </p>
+        <div id="header">
+            <p>
+                <span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
+                <span id="status"><?php echo $json["#status"][$lang]; ?></span>
+                <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
+            </p>
+
+        </div>
         <div class="blur"></div>
     </div>
     <div class="content">

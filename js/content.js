@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var duration = 0;
-    var language = "<?php echo $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2); ?>" == "fr" ? "fr" : "en"
+    var url = window.location.toString().split("/");
+    var language = (url[url.indexOf("guillaumejounel.com")+1] || navigator.language || navigator.userLanguage).slice(0,2) == "fr" ? "fr" : "en"
 
     function loadContent() {
         if (language == "fr") {

@@ -50,7 +50,7 @@ body {
     font-weight:100;
 }
 
-.blurred{
+.blurred {
     position:relative;
     display:block;
     margin: auto;
@@ -72,7 +72,7 @@ body {
     padding-right: 50px;
 }
 
-.blurred p {
+.blurred #header  {
     position:relative;
     z-index:110;
     font-weight:200;
