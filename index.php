@@ -33,16 +33,10 @@ else
     </div>
     <div id="content">
         <div class="column">
-            <div class="article"></div>
-            <div class="article"></div>
         </div>
         <div class="column">
-            <div class="article"></div>
-            <div class="article"></div>
         </div>
         <div class="column">
-            <div class="article"></div>
-            <div class="article"></div>
         </div>
     </div>
 </body>

@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $('#fixed').css('position', 'fixed');
     $('#content').css('top', $('#fixed').outerHeight());
-    console.log($('#fixed').outerHeight())
     var duration = 0;
     var url = window.location.toString().split("/");
     var language = (url[url.indexOf("guillaumejounel.com")+1] || navigator.language || navigator.userLanguage).slice(0,2) == "fr" ? "fr" : "en"
@@ -22,6 +21,18 @@ $(document).ready(function() {
                     $(id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
             });
         });
+        $("#content .column").fadeOut(100, function() { $("#content .column").empty()
+        $.getJSON("content/articles.json", function(json) {
+            var i = 0;
+            $.each(json, function(id, value) {
+                if (language == "fr")
+                    $("#content .column:nth-child("+(i%3+1)+")").append("<div class='article'>"+value.fr.title+"</div>")
+                else
+                    $("#content .column:nth-child("+(i%3+1)+")").append("<div class='article'>"+value.en.title+"</div>")
+                i+=1
+            });
+        })
+    }).fadeIn(2000);
     }
 
     function update(lan) {
@@ -38,4 +49,5 @@ $(document).ready(function() {
     });
 
     loadContent()
+
 });
