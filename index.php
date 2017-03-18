@@ -23,8 +23,8 @@ else
         <div class="blurred">
             <div id="header">
                 <p>
-                    <span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
-                    <span id="status"><?php echo $json["#status"][$lang]; ?></span>
+                    <p id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
+                    <span id="status"><?php echo $json["#status"][$lang]; ?></span></p>
                     <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
                 </p>
             </div>
