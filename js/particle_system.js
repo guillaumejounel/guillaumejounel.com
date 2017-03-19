@@ -18,6 +18,6 @@ endShape()}}
 var minimum=65
 function setup(){var canvas=createCanvas(windowWidth,windowHeight,WEBGL)
 canvas.parent('bg');for(i=1;i<height*width/2000;i++){particles.push(new Particle(createVector(random(width),random(height))))}}
-function draw(){translate(-width/2,-height/2,0);background(255,255,255,0)
+function draw(){particles[0].location.x=mouseX;particles[0].location.y=mouseY;translate(-width/2,-height/2,0);background(255,255,255,0)
 for(i=particles.length-1;i>-1;i--){particles[i].run()}}
 function windowResized(){resizeCanvas(windowWidth,windowHeight);}

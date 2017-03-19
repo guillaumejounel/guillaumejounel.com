@@ -10,10 +10,6 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     <meta name="viewport" content="initial-scale=1.0">
     <title id="title"><?php echo $json["#title"][$lang]; ?></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/p5.js"></script>
-    <script language="javascript" type="text/javascript" src="js/particle_system.js"></script>
-    <script language="javascript" type="text/javascript" src="js/content.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
@@ -29,5 +25,9 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     <section id="content">
     </section>
     <footer>Developed with ♡ by Guillaume Jounel</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="js/particle_system.js"></script>
+    <script language="javascript" type="text/javascript" src="js/content.js"></script>
 </body>
 </html>
