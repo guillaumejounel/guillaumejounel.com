@@ -55,7 +55,8 @@ function setup() {
 }
 
 function draw() {
-
+    particles[0].location.x = mouseX;
+    particles[0].location.y = mouseY;
     translate(-width/2,-height/2,0);
     background(255, 255, 255, 0)
     for (i=particles.length-1; i>-1; i--) {
