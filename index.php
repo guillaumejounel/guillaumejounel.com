@@ -22,12 +22,23 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
         </section>
         <div id="blur"></div>
     </div>
-    <section id="content">
+    <section id="content"><?php $articles = file_get_contents("content/articles.json"); $json = json_decode($articles, true); ?>
+        <?php foreach ($json as $i => $item) { echo "<article id='".$i."'>"; ?>
+            <h3><?php echo $json[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
+            <div class="resume">
+                <?php echo $json[$i][$lang]["resume"]."<br/>";?>
+            </div>
+            <div class="keywords">
+            <?php foreach ($json[$i][$lang]["keywords"] as $keyword) {
+                echo "<span>".$keyword."</span>";
+            }
+            echo "</article>";
+        } ?></div>
     </section>
     <footer>Developed with ♡ by Guillaume Jounel</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/p5.js"></script>
     <script language="javascript" type="text/javascript" src="js/particle_system.js"></script>
-    <script language="javascript" type="text/javascript" src="js/content.js"></script>
+    <script language="javascript" type="text/javascript" src="js/content_plain.js"></script>
 </body>
 </html>

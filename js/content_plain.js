@@ -23,18 +23,19 @@ $(document).ready(function() {
 
     }
 
-    $.getJSON("content/articles.json", function(json) {
-        var i = 0;
-        $.each(json, function(id, value) {
-            if (i<3) {
-                if (language == "fr")
-                    $("#content").append("<article>"+value.fr.title+"</article>")
-                else
-                    $("#content").append("<article>"+value.en.title+"</article>")
-                i+=1
-            }
-        });
-    })
+    // $.getJSON("content/articles.json", function(json) {
+    //     var i = 0;
+    //     $.each(json, function(id, value) {
+    //         if (i<3) {
+    //             if (language == "fr")
+    //                 $("#content").append("<article>"+value.fr.title+"</article>")
+    //             else
+    //                 $("#content").append("<article>"+value.en.title+"</article>")
+    //             i+=1
+    //         }
+    //     });
+    // })
+
     function update(lan) {
         duration = 300;
         language = lan;
@@ -48,4 +49,8 @@ $(document).ready(function() {
         return false
     });
 
+    $("article h3 span.delete").click(function() {
+        //alert($(this).parent().parent().attr("id"))
+        $(this).parent().parent().fadeOut()
+    })
 });

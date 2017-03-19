@@ -2,49 +2,57 @@
     "01" : {
         "fr": {
             "title": "test_titre1",
+            "resume": "test_resume",
             "content": "test_contenu1",
-            "keywords": ["test_motclé1_1", "testmotclé1_2"]
+            "keywords": ["test_motclé1_1", "test_motclé1_2"]
         },
         "en": {
             "title": "test_title1",
+            "resume": "test_resume",
             "content": "test_content1",
-            "keywords": ["test_keyword1_1", "testkeyword1_2"]
+            "keywords": ["test_keyword1_1", "test_keyword1_2"]
         }
     },
     "02" : {
         "fr": {
             "title": "test_titre2",
+            "resume": "test_resume",
             "content": "test_contenu2",
-            "keywords": ["test_motclé2_1", "testmotclé2_2"]
+            "keywords": ["test_motclé2_1", "test_motclé2_2"]
         },
         "en": {
             "title": "test_title2",
+            "resume": "test_resume",
             "content": "test_content2",
-            "keywords": ["test_keyword2_1", "testkeyword2_2"]
+            "keywords": ["test_keyword2_1", "test_keyword2_2"]
         }
     },
     "03" : {
         "fr": {
             "title": "test_titre3",
+            "resume": "test_resume",
             "content": "test_contenu3",
-            "keywords": ["test_motclé3_1", "testmotclé3_2"]
+            "keywords": ["test_motclé3_1", "test_motclé3_2"]
         },
         "en": {
             "title": "test_title3",
+            "resume": "test_resume",
             "content": "test_content3",
-            "keywords": ["test_keyword3_1", "testkeyword3_2"]
+            "keywords": ["test_keyword3_1", "test_keyword3_2"]
         }
     },
     "04" : {
         "fr": {
             "title": "test_titre4",
+            "resume": "test_resume",
             "content": "test_contenu4",
-            "keywords": ["test_motclé4_1", "testmotclé4_2"]
+            "keywords": ["test_motclé4_1", "test_motclé4_2"]
         },
         "en": {
             "title": "test_title4",
+            "resume": "test_resume",
             "content": "test_content4",
-            "keywords": ["test_keyword4_1", "testkeyword4_2"]
+            "keywords": ["test_keyword4_1", "test_keyword4_2"]
         }
     }
 }
