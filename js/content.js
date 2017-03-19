@@ -15,4 +15,4 @@ i+=1}});})
 function update(lan){duration=300;language=lan;loadContent()}
 $("#language span").click(function(){id=$(this).attr('id')
 update(id)
-window.history.pushState(document.title,document.title,id);return false});loadContent()});
+window.history.pushState(document.title,document.title,id);return false})});
