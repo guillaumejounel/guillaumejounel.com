@@ -1,9 +1,9 @@
 <?php $content = file_get_contents("content/general.json");
 $json = json_decode($content, true);
 if (isset($_GET["langue"]))
-    $lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
+$lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
 else
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,26 +18,16 @@ else
 </head>
 <body>
     <div id="bg"></div>
-    <div id="fixed">
-        <p id="name">Guillaume <span>Jounel</span></p>
-        <div class="blurred">
-            <div id="header">
-                <p>
-                    <p id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span>
-                    <span id="status"><?php echo $json["#status"][$lang]; ?></span></p>
-                    <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
-                </p>
-            </div>
-            <div class="blur"></div>
-        </div>
+    <header>Guillaume <span>Jounel</span></header>
+    <div id="blurred">
+        <section>
+            <p id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $json["#status"][$lang]; ?></span></p>
+            <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
+        </section>
+        <div id="blur"></div>
     </div>
-    <div id="content">
-        <div class="column">
-        </div>
-        <div class="column">
-        </div>
-        <div class="column">
-        </div>
-    </div>
+    <section id="content">
+    </section>
+    <footer>Developed with ♡ by Guillaume Jounel</footer>
 </body>
 </html>
