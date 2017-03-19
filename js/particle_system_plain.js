@@ -49,7 +49,9 @@ var minimum = 65
 function setup() {
     var canvas = createCanvas(windowWidth,windowHeight, WEBGL)
     canvas.parent('bg');
-    for (i=1; i<height*width/2000; i++) {
+    nbparticules = height*width/2000;
+    if (nbparticules > 500) { nbparticules = 500 }
+    for (i=1; i<nbparticules; i++) {
         particles.push(new Particle(createVector(random(width), random(height))))
     }
 }
