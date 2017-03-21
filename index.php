@@ -4,11 +4,11 @@ if (isset($_GET["langue"]))
 $lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
 else
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
-<html>
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <title id="title"><?php echo $json["#title"][$lang]; ?></title>
+    <title id="metatitle"><?php echo $json["#metatitle"][$lang]; ?></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
@@ -20,13 +20,14 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     </header>
     <div id="blurred">
         <section>
-            <p id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $json["#status"][$lang]; ?></span></p>
+            <h3 id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $json["#status"][$lang]; ?></span></h3>
             <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
         </section>
         <div id="blur"></div>
     </div>
-    <section id="content"><?php $articles = file_get_contents("content/articles.json"); $json = json_decode($articles, true); ?>
-        <?php foreach ($json as $i => $item) { echo "<article id='".$i."'>"; ?>
+    <div id="content">
+        <?php $articles = file_get_contents("content/articles.json"); $json = json_decode($articles, true);
+        foreach ($json as $i => $item) { echo "<article id='".$i."'>"; ?>
             <h3><?php echo $json[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
                 <p><?php echo $json[$i][$lang]["content"]."<br/>";?></p>
@@ -35,13 +36,13 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
             <?php foreach ($json[$i][$lang]["keywords"] as $keyword) {
                 echo "<span>".$keyword."</span>";
             }
-            echo "</article>";
-        } ?></div>
-    </section>
+            echo "</div></article>";
+        } ?>
+    </div>
     <footer>Developed with ♡ by Guillaume Jounel</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/p5.js"></script>
-    <script language="javascript" type="text/javascript" src="js/particle_system_plain.js"></script>
-    <script language="javascript" type="text/javascript" src="js/content_plain.js"></script>
+    <script type="text/javascript" src="js/p5.js"></script>
+    <script type="text/javascript" src="js/particle_system_plain.js"></script>
+    <script type="text/javascript" src="js/content_plain.js"></script>
 </body>
 </html>

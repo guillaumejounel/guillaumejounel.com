@@ -139,8 +139,10 @@ header #social i:hover {
     position:relative;
 }
 
-#blurred p #language {
+#blurred h3 #language {
     position:absolute;
+    font-weight: 200;
+    font-size: 90%;
     display:block;
     right:0px;
     bottom:1px;
@@ -272,7 +274,7 @@ a:hover {
     }
 }
 
-@media only screen and (min-width: 1050) {
+@media only screen and (min-width: 1050px) {
     #content article {
         width:31.3%;
     }
@@ -282,7 +284,7 @@ a:hover {
     }
 }
 
-@media only screen and (min-width: 1230) {
+@media only screen and (min-width: 1230px) {
     #blurred {
         padding:1px 20% 1px 20%;
         width:60%;
