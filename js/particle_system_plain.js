@@ -56,13 +56,32 @@ function setup() {
     }
 }
 
+var testperf = true;
+var eligible = true;
+var timelimit = 200;
+var r=0;
 function draw() {
-    particles[0].location.x = mouseX;
-    particles[0].location.y = mouseY;
-    translate(-width/2,-height/2,0);
-    background(255, 255, 255, 0)
-    for (i=particles.length-1; i>-1; i--) {
-        particles[i].run()
+    if (eligible) {
+        if (testperf) {
+            var start = new Date();
+            r+=1
+        }
+        particles[0].location.x = mouseX;
+        particles[0].location.y = mouseY;
+        translate(-width/2,-height/2,0);
+        background(255, 255, 255, 0)
+        for (i=particles.length-1; i>-1; i--) {
+            particles[i].run()
+        }
+        if (testperf) {
+            var end = new Date();
+            var perf = new Date() - start;
+            console.log(end-start);
+            if (perf > timelimit)
+                eligible = false
+            if (r > 50)
+                testperf = false
+        }
     }
 }
 
