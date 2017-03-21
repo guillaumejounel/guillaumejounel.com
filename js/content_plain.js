@@ -34,7 +34,7 @@ $(document).ready(function() {
                         $("article#"+id+" h3").html(value.en.title+ "<span class='delete'>X</span>");
                         $("article#"+id+" p").html(value.en.resume)
                         $("article#"+id+" div.keywords").empty()
-                        for (var i = 0; i < value.en.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.fr.keywords[i]+"</span>")}
+                        for (var i = 0; i < value.en.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.en.keywords[i]+"</span>")}
                     }).fadeIn()
 
                 }
