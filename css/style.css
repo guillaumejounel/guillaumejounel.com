@@ -73,6 +73,23 @@ header #social i:hover {
     opacity: 0.4;
 }
 
+.fa-linkedin:hover, .fa-facebook:hover, .fa-twitter:hover {
+    opacity: 0.6;
+}
+
+.fa-linkedin:hover {
+    color: rgb(0,119,181);
+}
+
+.fa-facebook:hover {
+    color: rgb(59, 89, 152);
+}
+
+
+.fa-twitter:hover {
+    color: rgb(64,153,255);
+}
+
 #blurred {
     position:relative;
     overflow: hidden;
@@ -177,12 +194,12 @@ a:hover {
 #content article h3 {
     display: block;
     position: relative;
-    margin: 0px 0px 10px 0px;
-    line-height: 200%;
+    margin: 0px 0px 0px 0px;
+    line-height: 170%;
     padding-left: 3%;
     font-size: 150%;
     background-color: white;
-    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
     font-weight: 100;
     text-transform: uppercase;
 }
