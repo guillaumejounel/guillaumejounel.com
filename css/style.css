@@ -44,31 +44,48 @@ body {
 }
 
 header {
-    margin:30px 0px 30px 0px;
-    font-size:225%;
-    position:relative;
-    text-align:center;
-    width:100%;
+    margin: 20px 0px 30px 0px;
+    font-size: 225%;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
 
 
 header span {
-    font-weight:100;
+    font-weight: 100;
+}
+
+header p {
+    margin-bottom:0px;
+}
+
+header #social {
+    font-size: 50%;
+}
+
+header #social i {
+    margin:0px 5px 0px 5px;
+    opacity: 0.2;
+}
+
+header #social i:hover {
+    opacity: 0.4;
 }
 
 #blurred {
     position:relative;
     overflow: hidden;
-    display:block;
+    display: block;
     margin: auto;
-    z-index:100;
-    border-radius:0px;
+    z-index: 100;
+    border-radius: 0px;
     background-color: rgba(255,255,255,0.1);
-    box-shadow:0px 0px 2px rgba(0,0,0,0.1);
-    margin-bottom:10px;
-    line-height:160%;
-    padding:1px 5% 1px 5%;
-    width:90%;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    line-height: 160%;
+    padding: 1px 5% 1px 5%;
+    width: 90%;
     border-bottom: 5px solid rgba(0,0,0,0.03)
 }
 
@@ -219,7 +236,7 @@ a:hover {
         width:48%;
     }
     header {
-        margin:40px 0px 30px 0px;
+        margin:30px 0px 30px 0px;
         font-size:300%;
     }
     #blurred {
