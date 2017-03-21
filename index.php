@@ -1,5 +1,5 @@
-<?php $content = file_get_contents("content/general.json");
-$json = json_decode($content, true);
+<?php $general = file_get_contents("content/general.json");
+$general = json_decode($general, true);
 if (isset($_GET["langue"]))
 $lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
 else
@@ -8,7 +8,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <title id="metatitle"><?php echo $json["#metatitle"][$lang]; ?></title>
+    <title id="metatitle"><?php echo $general["#metatitle"][$lang]; ?></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
@@ -20,25 +20,29 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     </header>
     <div id="blurred">
         <section>
-            <h3 id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $json["#status"][$lang]; ?></span></h3>
-            <div id="introduction"><?php echo $json["#introduction"][$lang]; ?></div>
+            <h3 id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $general["#status"][$lang]; ?></span></h3>
+            <div id="introduction"><?php echo $general["#introduction"][$lang]; ?></div>
         </section>
         <div id="blur"></div>
     </div>
     <div id="content">
-        <?php $articles = file_get_contents("content/articles.json"); $json = json_decode($articles, true);
-        foreach ($json as $i => $item) { echo "<article id='".$i."'>"; ?>
-            <h3><?php echo $json[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
+        <?php $articles = file_get_contents("content/articles.json"); $articles = json_decode($articles, true);
+        shuffle($articles);
+        foreach ($articles as $i => $item) { echo "<article id='".$i."'>"; ?>
+            <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
-                <img src="img/articles/<?php echo $json[$i][$lang]["image"]; ?>.png"/>
-                <p><?php echo $json[$i][$lang]["content"]."<br/>";?></p>
+                <img src="img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
+                <p><?php echo $articles[$i][$lang]["content"]."<br/>";?></p>
             </div>
             <div class="keywords">
-            <?php foreach ($json[$i][$lang]["keywords"] as $keyword) {
+            <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
                 echo "<span>".$keyword."</span>";
             }
-            echo "</div></article>";
-        } ?>
+            echo "</div></article>"; } ?>
+            </article>
+            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="img/articles/ending1.png"/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="img/articles/ending2.png"/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="img/articles/ending3.png"/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
     </div>
     <footer>Developed with ♡ by Guillaume Jounel <span></span></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

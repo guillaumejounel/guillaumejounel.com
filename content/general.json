@@ -10,5 +10,29 @@
     "#introduction" : {
         "fr": "<p>Bonjour ! Je m'appelle Guillaume.</p><p>Je suis étudiant ingénieur en Génie Informatique à l'UTC.<sup><a href='https://www.utc.fr/utc/lutc-en-bref/8-raisons-de-choisir-lutc.html' target='_blank'>1</a></sup> Je me considère comme une personne autodidacte et créative, avec le souci du détail, passionnée par les nouvelles technologies qui construisent un monde meilleur.</p><p>Je recherche actuellement un stage de six mois en tant que développeur, mais je serais également ravi d'aborder des techniques d'intelligence artificielle telles que le Natural Language Processing ou le Data Mining.</p><p>Vous trouverez ci-dessous quelques expérimentations ainsi que des inspirations que j'aimerais partager avec vous.</p><p>N'hésitez pas à consulter <a href='https://github.com/guillaumejounel' target='_blank'>mon GitHub</a> et  à <a href='mailto:gjounel@gmail.com'>me contacter</a>. Je vous souhaite une bonne journée ! :)</p>",
         "en": "<p>Hi! I'm Guillaume.</p><p>I'm a CS Engineering student at the University of Technology of Compiegne.<sup><a href='https://en.wikipedia.org/wiki/University_of_Technology_of_Compiègne' target='_blank'>1</a></sup> I consider myself as a fast-learner, creative, sharp-eyed and self-challenging person, passionate about new technologies making the world a better place.</p><p>I am currently looking for a six-month internship as a Software Engineer, but I would also be pleased to hone my skills in Artificial Intelligence techniques such as Natural Language Processing and Data Mining.</p><p>Below are some exciting projects or experiments I have done and inspirations I would like to share with you.</p><p>Please feel free to check out <a href='https://github.com/guillaumejounel' target='_blank'>my GitHub</a> and <a href='mailto:gjounel@gmail.com'>contact me</a>. Have a nice day! :)</p>"
+    },
+    "#endt1" : {
+        "fr": "Le dernier élément",
+        "en": "The last item"
+    },
+    "#endT1" : {
+        "fr": "Merci beaucoup pour votre intérêt. N'hésitez surtout pas à <a href='mailto:gjounel@gmail.com'>me contacter</a> pour plus d'informations. 🙂",
+        "en": "Thank you very much for your interest. Do not hesitate to <a href='mailto:gjounel@gmail.com'>contact me</a> if you want any further information. 🙂"
+    },
+    "#endt2" : {
+        "fr": "Revenez bientôt !",
+        "en": "Come back soon!"
+    },
+    "#endT2" : {
+        "fr": "Je travaille encore sur des projets que je vous partagerai d'ici quelques jours, restez connecté ! 😜",
+        "en": "I'm currently working on cool stuff I'll share with you in the coming days. Stay tunned! 😜"
+    },
+    "#endt3" : {
+        "fr": "La vraie fin.",
+        "en": "The very end."
+    },
+    "#endT3" : {
+        "fr": "Nous sommes proches de la balise &lt;/body&gt; et il est temps pour moi d'y aller. Ne soyez pas triste, la vie est belle ! 🙃",
+        "en": "We're really close to the &lt;/body&gt; tag and it's time for me to leave. Don't be sad, life is beautiful! 🙃"
     }
 }
