@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('body').css('background', 'white')
-    var duration = 0;
+    var duration = 300;
     var url = window.location.toString().split("/");
     var language = (url[url.indexOf("guillaumejounel.com")+1] || navigator.language || navigator.userLanguage).slice(0,2) == "fr" ? "fr" : "en"
 
@@ -20,24 +20,29 @@ $(document).ready(function() {
                     $(id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
             });
         });
+        $.getJSON("content/articles.json", function(json) {
+            $.each(json, function(id, value) {
+                if (language == "fr") {
+                    $("article#"+id).fadeOut(100, function() {
+                        $("article#"+id+" h3").html(value.fr.title+ "<span class='delete'>X</span>");
+                        $("article#"+id+" p").html(value.fr.resume)
+                        $("article#"+id+" div.keywords").empty()
+                        for (var i = 0; i < value.fr.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.fr.keywords[i]+"</span>")}
+                    }).fadeIn()
+                } else {
+                    $("article#"+id).fadeOut(100, function() {
+                        $("article#"+id+" h3").html(value.en.title+ "<span class='delete'>X</span>");
+                        $("article#"+id+" p").html(value.en.resume)
+                        $("article#"+id+" div.keywords").empty()
+                        for (var i = 0; i < value.en.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.fr.keywords[i]+"</span>")}
+                    }).fadeIn()
 
+                }
+            });
+        });
     }
 
-    // $.getJSON("content/articles.json", function(json) {
-    //     var i = 0;
-    //     $.each(json, function(id, value) {
-    //         if (i<3) {
-    //             if (language == "fr")
-    //                 $("#content").append("<article>"+value.fr.title+"</article>")
-    //             else
-    //                 $("#content").append("<article>"+value.en.title+"</article>")
-    //             i+=1
-    //         }
-    //     });
-    // })
-
     function update(lan) {
-        duration = 300;
         language = lan;
         loadContent()
     }
@@ -50,7 +55,6 @@ $(document).ready(function() {
     });
 
     $("article h3 span.delete").click(function() {
-        //alert($(this).parent().parent().attr("id"))
         $(this).parent().parent().css("display","none")
-    })
+    });
 });

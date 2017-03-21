@@ -28,11 +28,11 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     <div id="content">
         <?php $articles = file_get_contents("content/articles.json"); $articles = json_decode($articles, true);
         shuffle($articles);
-        foreach ($articles as $i => $item) { echo "<article id='".$i."'>"; ?>
+        foreach ($articles as $i => $item) { echo "<article id='".($i+1)."'>"; ?>
             <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
                 <img src="img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
-                <p><?php echo $articles[$i][$lang]["content"]."<br/>";?></p>
+                <p><?php echo $articles[$i][$lang]["resume"]."<br/>";?></p>
             </div>
             <div class="keywords">
             <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
