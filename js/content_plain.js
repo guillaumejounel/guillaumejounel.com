@@ -51,6 +51,6 @@ $(document).ready(function() {
 
     $("article h3 span.delete").click(function() {
         //alert($(this).parent().parent().attr("id"))
-        $(this).parent().parent().fadeOut()
+        $(this).parent().parent().css("display","none")
     })
 });
