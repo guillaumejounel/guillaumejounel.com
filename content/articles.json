@@ -2,27 +2,23 @@
     "01" : {
         "fr": {
             "title": "test_titre1",
-            "resume": "test_resume",
-            "content": "test_contenu1",
-            "keywords": ["test_motclé1_1", "test_motclé1_2"]
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "keywords": ["test_motclé1_1", "test_motclé1_2", "test_motclé1_3"]
         },
         "en": {
             "title": "test_title1",
-            "resume": "test_resume",
-            "content": "test_content1",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "keywords": ["test_keyword1_1", "test_keyword1_2"]
         }
     },
     "02" : {
         "fr": {
             "title": "test_titre2",
-            "resume": "test_resume",
             "content": "test_contenu2",
             "keywords": ["test_motclé2_1", "test_motclé2_2"]
         },
         "en": {
             "title": "test_title2",
-            "resume": "test_resume",
             "content": "test_content2",
             "keywords": ["test_keyword2_1", "test_keyword2_2"]
         }
@@ -30,13 +26,11 @@
     "03" : {
         "fr": {
             "title": "test_titre3",
-            "resume": "test_resume",
             "content": "test_contenu3",
             "keywords": ["test_motclé3_1", "test_motclé3_2"]
         },
         "en": {
             "title": "test_title3",
-            "resume": "test_resume",
             "content": "test_content3",
             "keywords": ["test_keyword3_1", "test_keyword3_2"]
         }
@@ -44,13 +38,11 @@
     "04" : {
         "fr": {
             "title": "test_titre4",
-            "resume": "test_resume",
             "content": "test_contenu4",
             "keywords": ["test_motclé4_1", "test_motclé4_2"]
         },
         "en": {
             "title": "test_title4",
-            "resume": "test_resume",
             "content": "test_content4",
             "keywords": ["test_keyword4_1", "test_keyword4_2"]
         }

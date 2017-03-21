@@ -14,7 +14,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
 </head>
 <body>
     <div id="bg"></div>
-    <header>Guillaume <span>Jounel</span></header>
+    <header><p>Guillaume <span>Jounel</span></p></header>
     <div id="blurred">
         <section>
             <p id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $json["#status"][$lang]; ?></span></p>
@@ -25,8 +25,8 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     <section id="content"><?php $articles = file_get_contents("content/articles.json"); $json = json_decode($articles, true); ?>
         <?php foreach ($json as $i => $item) { echo "<article id='".$i."'>"; ?>
             <h3><?php echo $json[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
-            <div class="resume">
-                <?php echo $json[$i][$lang]["resume"]."<br/>";?>
+            <div class="text">
+                <p><?php echo $json[$i][$lang]["content"]."<br/>";?></p>
             </div>
             <div class="keywords">
             <?php foreach ($json[$i][$lang]["keywords"] as $keyword) {
