@@ -59,6 +59,7 @@ function setup() {
 var testperf = true;
 var eligible = true;
 var timelimit = 200;
+var maxtest = 0;
 var r=0;
 function draw() {
     if (eligible) {
@@ -79,8 +80,13 @@ function draw() {
             console.log(end-start);
             if (perf > timelimit)
                 eligible = false
-            if (r > 50)
+            if (perf > maxtest)
+                maxtest = perf
+            if (r > 50) {
                 testperf = false
+                $('footer span').html("("+maxtest+")")
+            }
+
         }
     }
 }

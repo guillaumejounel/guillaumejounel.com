@@ -39,7 +39,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
             echo "</div></article>";
         } ?>
     </div>
-    <footer>Developed with ♡ by Guillaume Jounel</footer>
+    <footer>Developed with ♡ by Guillaume Jounel <span></span></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/p5.js"></script>
     <script type="text/javascript" src="js/particle_system_plain.js"></script>
