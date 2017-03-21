@@ -30,6 +30,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
         foreach ($json as $i => $item) { echo "<article id='".$i."'>"; ?>
             <h3><?php echo $json[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
+                <img src="img/articles/<?php echo $json[$i][$lang]["image"]; ?>.png"/>
                 <p><?php echo $json[$i][$lang]["content"]."<br/>";?></p>
             </div>
             <div class="keywords">

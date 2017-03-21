@@ -184,7 +184,7 @@ a:hover {
 }
 
 #content article {
-    display:inline-block;
+    float:left;
     position:relative;
     border-top: solid 1px rgb(240, 240, 240);
     margin: 0px 1% 0px 1%;
@@ -193,10 +193,13 @@ a:hover {
     width:98%;
     height: 99%;
     cursor: pointer;
+    opacity: 0.8;
+    transition: opacity .5s ease;
 }
 
 #content article:hover {
     box-shadow:0px 0px 2px rgba(0,0,0,0.2);
+    opacity: 1;
 }
 
 #content article h3 {
@@ -224,12 +227,28 @@ a:hover {
     color:black;
 }
 
+#content article div img {
+    height:130px;
+    position:relative;
+    margin:10px 5px 5px 0px;
+    -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    filter: saturate(80%);
+    float:left;
+}
+
 #content article div.text {
     position:relative;
     font-weight: 100;
-    height: 100%;
-    width:100%;
-    overflow:hidden;
+    height: 150px;
+    width:95%;
+    white-space: normal;
+    margin: 0px 10px 0px 10px;
+    overflow-y:scroll;
+}
+
+#content article div.keywords {
+    padding:5px 5px 0px 5px;
 }
 
 #content article div.keywords span{
@@ -237,16 +256,12 @@ a:hover {
     float:left;
     padding: 3px 7px 3px 7px;
     margin:0px 0px 3px 5px;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
     border-radius:15px;
     cursor: pointer;
     font-weight: bold;
     font-size: 70%;
     color:white;
-}
-
-#content article div.keywords span:hover {
-    background-color: rgba(0,0,0,0.2);
 }
 
 @media only screen and (min-width: 500px) {
