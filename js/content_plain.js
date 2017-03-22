@@ -23,19 +23,19 @@ $(document).ready(function() {
         $.getJSON("content/articles.json", function(json) {
             $.each(json, function(id, value) {
                 if (language == "fr") {
-                    $("article#"+id).fadeOut(100, function() {
+                    $("article#"+id).animate({opacity:0},100, function() {
                         $("article#"+id+" h3").html(value.fr.title+ "<span class='delete'>X</span>");
                         $("article#"+id+" p").html(value.fr.resume)
                         $("article#"+id+" div.keywords").empty()
                         for (var i = 0; i < value.fr.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.fr.keywords[i]+"</span>")}
-                    }).fadeIn()
+                    }).animate({opacity:1}, 100)
                 } else {
-                    $("article#"+id).fadeOut(100, function() {
+                    $("article#"+id).animate({opacity:0},100, function() {
                         $("article#"+id+" h3").html(value.en.title+ "<span class='delete'>X</span>");
                         $("article#"+id+" p").html(value.en.resume)
                         $("article#"+id+" div.keywords").empty()
                         for (var i = 0; i < value.en.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.en.keywords[i]+"</span>")}
-                    }).fadeIn()
+                    }).animate({opacity:1}, 100)
 
                 }
             });
