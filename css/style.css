@@ -247,6 +247,19 @@ a:hover {
     overflow-y:scroll;
 }
 
+#content article div.text span {
+    display: block;
+    position: relative;
+    font-size: 80%;
+    color: rgb(140, 140, 140);
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#content article div.text p {
+    margin-top: 5px;
+}
+
 #content article div.keywords {
     padding:5px 5px 0px 5px;
 }

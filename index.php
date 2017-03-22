@@ -32,6 +32,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
             <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
                 <img src="img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
+                <span class="clic"><?php echo $general[".clic"][$lang]; ?></span>
                 <p><?php echo $articles[$i][$lang]["resume"]."<br/>";?></p>
             </div>
             <div class="keywords">
