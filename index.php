@@ -16,7 +16,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     <div id="bg"></div>
     <header>
         <p>Guillaume <span>Jounel</span></p>
-        <div id="social"><a href="mailto:gjounel@gmail.com"><i class='fa fa-envelope-o' aria-hidden='true'></i></a><a href="https://github.com/guillaumejounel" target="_blank"><i class='fa fa-github' aria-hidden='true'></i></a><a href="https://linkedin.com/in/guillaumejounel" target="_blank"><i class='fa fa-linkedin' aria-hidden='true'></i></a><a href="https://facebook.com/guillaumejounel" target="_blank"><i class='fa fa-facebook' aria-hidden='true'></i></a><a href="https://twitter.com/guillaumejounel" target="_blank"><i class='fa fa-twitter' aria-hidden='true'></i></a></div>
+        <div id="social"><a href="mailto:gjounel@gmail.com"><i class='fa fa-envelope-o' aria-hidden='true'></i></a><a href="https://github.com/guillaumejounel" target="_blank"><i class='fa fa-github' aria-hidden='true'></i></a><a href="https://linkedin.com/in/guillaumejounel" target="_blank"><i class='fa fa-linkedin' aria-hidden='true'></i></a><a href="https://facebook.com/guillaumejounel" target="_blank"><i class='fa fa-facebook' aria-hidden='true'></i></a><a href="https://twitter.com/guillaumejounel" target="_blank"><i class='fa fa-twitter' aria-hidden='true'></i></a><a id="CV" href="<?php if($lang=="fr") { echo "content/CV - Guillaume Jounel.pdf"; } else { echo "content/Resume - Guillaume Jounel.pdf"; } ?>" target="_blank"><i class='fa fa-file-text-o' aria-hidden='true'></i></a></div>
     </header>
     <div id="blurred">
         <section>

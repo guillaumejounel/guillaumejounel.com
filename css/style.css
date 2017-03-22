@@ -90,9 +90,14 @@ header #social i:hover {
     color: rgb(59, 89, 152);
 }
 
-
 .fa-twitter:hover {
     color: rgb(64,153,255);
+}
+
+#CV {
+    position:relative;
+    top:-1px;
+    font-size:90%;
 }
 
 #blurred {
