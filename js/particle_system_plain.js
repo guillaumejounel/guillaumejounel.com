@@ -82,11 +82,8 @@ function draw() {
                 eligible = false
             if (perf > maxtest)
                 maxtest = perf
-            if (r > 50) {
+            if (r > 50)
                 testperf = false
-                $('footer span').html("("+maxtest+")")
-            }
-
         }
     }
 }
