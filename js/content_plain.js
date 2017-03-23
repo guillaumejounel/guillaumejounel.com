@@ -56,11 +56,16 @@ $(document).ready(function() {
         return false
     });
 
-    $("#viewer").on("click", this, function() {
-        $(this).css("display","none");
+    var clic = false;
+    $("#viewer").on("click", "article", function() {
+        clic = true
+    }).on("click", this, function() {
+        if (!clic)
+            $(this).css("display","none");
+        clic = false;
     });
 
-    var clic = false;
+    clic = false;
     $("article").on("click", "h3 span.delete", function() {
         clic = true;
     }).on("click", this, function() {
