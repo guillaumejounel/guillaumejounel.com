@@ -84,7 +84,7 @@ $(document).ready(function() {
                     $("#viewer article div.keywords").append("<span>"+value+"</span>")
                 })
                 history.pushState("", document.title, "/");
-                window.history.pushState(document.title,document.title,language+"/"+json[i].image);
+                window.history.pushState(document.title,document.title,language+"/"+i+"/"+json[i].image);
                 return false
             });
             return false

@@ -1,7 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine On
 RewriteRule ^([A-Za-z-]+)/?$ index.php?langue=$1 [L]
-RewriteRule ^([A-Za-z-]+)/([A-Za-z-]+)/?$ index.php?langue=$1&article=$2 [L]
+RewriteRule ^([A-Za-z-]+)/([0-9]+)/?.*$ index.php?langue=$1&article=$2 [L]
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>

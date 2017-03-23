@@ -32,7 +32,7 @@ $article = htmlspecialchars($_GET["article"], ENT_QUOTES);
         <?php $articles = file_get_contents("content/articles.json"); $articles = json_decode($articles, true);
         $index = range(0, sizeof($articles)-1);
         shuffle($index);
-        foreach ($index as $i) { echo "<a href='/$lang/".$articles[$i]['image']."'><article id='".$i."'>"; ?>
+        foreach ($index as $i) { echo "<a href='/$lang/".$i."/".$articles[$i]['image']."'><article id='".$i."'>"; ?>
             <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
                 <img src="/img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
