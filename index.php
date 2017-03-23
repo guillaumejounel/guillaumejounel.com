@@ -3,7 +3,10 @@ $general = json_decode($general, true);
 if (isset($_GET["langue"]))
 $lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
 else
-$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en";
+if (isset($_GET["article"]))
+$article = htmlspecialchars($_GET["article"], ENT_QUOTES);
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -20,7 +23,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     </header>
     <div id="blurred">
         <section>
-            <h3 id="title"><span id="language"><a href="en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $general["#status"][$lang]; ?></span></h3>
+            <h3 id="title"><span id="language"><a href="/en"><span id="en" <?php if($lang=="en") echo "style='font-weight:bold'"?>>en</span></a> ~ <a href="/fr"><span id="fr" <?php if($lang=="fr") echo "style='font-weight:bold'"?>>fr</span></a></span><span id="status"><?php echo $general["#status"][$lang]; ?></span></h3>
             <div id="introduction"><?php echo $general["#introduction"][$lang]; ?></div>
         </section>
         <div id="blur"></div>
@@ -29,7 +32,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
         <?php $articles = file_get_contents("content/articles.json"); $articles = json_decode($articles, true);
         $index = range(0, sizeof($articles)-1);
         shuffle($index);
-        foreach ($index as $i) { echo "<article id='".$i."'>"; ?>
+        foreach ($index as $i) { echo "<a href='$lang/".$articles[$i]['image']."'><article id='".$i."'>"; ?>
             <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
                 <img src="/img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
@@ -40,13 +43,13 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
             <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
                 echo "<span>".$keyword."</span>";
             }
-            echo "</div></article>"; } ?>
+            echo "</div></article></a>"; } ?>
             </article>
             <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending1.png"/><br/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
             <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending2.png"/><br/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
             <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending3.png"/><br/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
     </div>
-    <div id="viewer">
+    <div id="viewer" <?php if (isset($article)) echo "style='display:block'"; ?>>
         <article>
             <h3><?php echo $general["#endt1"][$lang]; ?></h3>
             <div class="text"><img src=""/><br/>

@@ -2,7 +2,14 @@ $(document).ready(function() {
     $('body').css('background', 'white')
     var duration = 300;
     var url = window.location.toString().split("/");
-    var language = (url[url.indexOf("guillaumejounel.com")+1] || navigator.language || navigator.userLanguage).slice(0,2) == "fr" ? "fr" : "en"
+    var language = $("#en").css("font-weight")=="bold" ? "en" : "fr"
+    function initUrl() {
+        history.pushState("", document.title, "/");
+        window.history.pushState(document.title,document.title,language);
+        return false
+    }
+    if (url.length<4)
+        initUrl()
 
     function loadContent() {
         if (language == "fr") {
@@ -39,7 +46,8 @@ $(document).ready(function() {
     $("#language span").click(function() {
         id = $(this).attr('id')
         update(id)
-        window.history.pushState(document.title,document.title,id);
+        history.pushState("", document.title, "/");
+        window.history.pushState("",document.title,id);
         return false
     });
 
@@ -49,6 +57,8 @@ $(document).ready(function() {
     }).on("click", this, function() {
         if (!clic)
             $(this).css("display","none");
+            history.pushState("", document.title, "/");
+            window.history.pushState(document.title,document.title,language);
         clic = false;
     });
 
@@ -61,18 +71,22 @@ $(document).ready(function() {
             clic = false
         }
         else {
-            var id = $(this).attr("id")
+            var i = $(this).attr("id")
             $.getJSON("/content/articles.json", function(json) {
-                console.log(json[id][language].content)
-                $("#viewer article h3").html(json[id][language].title);
-                $("#viewer article div.text p").html(json[id][language].content);
+                console.log(json[i][language].content)
+                $("#viewer article h3").html(json[i][language].title);
+                $("#viewer article div.text p").html(json[i][language].content);
                 $("#viewer").css("display", "block");
                 $("#viewer article div.keywords").empty()
-                $.each(json[id][language].keywords, function(id, value) {
+                $.each(json[i][language].keywords, function(id, value) {
                     $("#viewer article div.keywords").append("<span>"+value+"</span>")
                 })
+                history.pushState("", document.title, "/");
+                window.history.pushState(document.title,document.title,language+"/"+json[i].image);
+                return false
             });
 
+            return false
         }
     }).on('mouseenter', this, function() {
         $(this).css('opacity',1);
