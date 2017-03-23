@@ -14,7 +14,7 @@ $(document).ready(function() {
             $("#en").css("font-weight", "bold")
             $(".CV").attr("href", "content/Resume - Guillaume Jounel.pdf")
         }
-        $.getJSON("content/general.json", function(json) {
+        $.getJSON("/guillaumejounel.com/content/general.json", function(json) {
             $.each(json, function(id, value) {
                 if (language == "fr")
                     $(id).fadeOut(duration, function() { $(this).html(value.fr) }).fadeIn()
@@ -22,7 +22,7 @@ $(document).ready(function() {
                     $(id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
             });
         });
-        $.getJSON("content/articles.json", function(json) {
+        $.getJSON("/guillaumejounel.com/content/articles.json", function(json) {
             $.each(json, function(id, value) {
                 if (language == "fr") {
                     $("article#"+id).animate({opacity:0},100, function() {
