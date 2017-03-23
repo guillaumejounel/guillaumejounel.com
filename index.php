@@ -48,6 +48,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     </div>
     <div id="viewer">
         <article>
+            <span id="quitter">Quitter</span>
             <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3>
             <div class="text"><img src=""/><br/>
                 <p id="endT1">

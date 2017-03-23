@@ -77,7 +77,6 @@ function draw() {
         if (testperf) {
             var end = new Date();
             var perf = new Date() - start;
-            console.log(end-start);
             if (perf > timelimit)
                 eligible = false
             if (perf > maxtest)

@@ -56,8 +56,20 @@ $(document).ready(function() {
         return false
     });
 
+    $("#viewer").on("click", this, function() {
+        $(this).css("display","none");
+    });
+
+    var clic = false;
     $("article").on("click", "h3 span.delete", function() {
-        $(this).parent().parent().css("display","none")
+        clic = true;
+    }).on("click", this, function() {
+        if (clic) {
+            $(this).css("display","none")
+            clic = false
+        }
+        else
+            $("#viewer").css("display", "block");
     }).on('mouseenter', this, function() {
         $(this).css('opacity',1);
     }).on('mouseleave', this, function() {
