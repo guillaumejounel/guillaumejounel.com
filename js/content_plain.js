@@ -29,10 +29,10 @@ $(document).ready(function() {
         });
         $.getJSON("/content/articles.json", function(json) {
             $.each(json, function(id, value) {
-                $("article#"+id).animate({opacity:0},200, function() {
-                    $("article#"+id+" h3").html(value[language].title+ "<br><span class='delete'>X</span>");
-                    $("article#"+id+" p").html(value[language].resume)
-                    $("article#"+id+" div.keywords").empty()
+                $("#content article#"+id).animate({opacity:0},200, function() {
+                    $("#content article#"+id+" h3").html(value[language].title+ "<br><span class='delete'>X</span>");
+                    $("#content article#"+id+" p").html(value[language].resume)
+                    $("#content article#"+id+" div.keywords").empty()
                     for (var i = 0; i < value[language].keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value[language].keywords[i]+"</span>")}
                 }).animate({opacity:0.8}, 200)
             });
@@ -52,6 +52,13 @@ $(document).ready(function() {
         return false
     });
 
+    $("#back").on("click", this, function() {
+        $("#viewer").css("display","none");
+        history.pushState("", document.title, "/");
+        window.history.pushState(document.title,document.title,language);
+        return false
+    })
+
     var clic = false;
     $("#viewer").on("click", "article", function() {
         clic = true
@@ -64,7 +71,7 @@ $(document).ready(function() {
     });
 
     clic = false;
-    $("article").on("click", "h3 span.delete", function() {
+    $("#content article").on("click", "h3 span.delete", function() {
         clic = true;
     }).on("click", this, function() {
         if (clic) {
