@@ -1,12 +1,7 @@
-<?php $general = file_get_contents("content/general.json");
-$general = json_decode($general, true);
-if (isset($_GET["langue"]))
-$lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
-else
-$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en";
-if (isset($_GET["article"]))
-$article = htmlspecialchars($_GET["article"], ENT_QUOTES);
-?>
+<?php $general = file_get_contents("content/general.json"); $general = json_decode($general, true);
+if (isset($_GET["langue"])) $lang = htmlspecialchars($_GET["langue"], ENT_QUOTES) == "fr" ? "fr" : "en";
+else $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en";
+if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_QUOTES); ?>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -51,14 +46,17 @@ $article = htmlspecialchars($_GET["article"], ENT_QUOTES);
     </div>
     <div id="viewer" <?php if (isset($article)) echo "style='display:block'"; ?>>
         <article>
-            <h3><?php echo $general["#endt1"][$lang]; ?></h3>
-            <div class="text"><img src=""/><br/>
+            <a href="/"><nav id="back"><?php echo $general["#back"][$lang]; ?></nav></a>
+            <h3><?php echo $articles[$article][$lang]["title"]; ?></h3>
+
+            <br/>
                 <p>
-                    <?php print_r($_GET); ?>
-                    <?php echo $general["#endT1"][$lang]; ?>
+                    <?php echo $articles[$article][$lang]["content"]; ?>
                 </p>
-            </div>
             <div class="keywords">
+                <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
+                    echo "<span>".$keyword."</span>";
+                } ?>
             </div>
         </article>
     </div>

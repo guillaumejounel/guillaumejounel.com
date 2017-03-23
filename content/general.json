@@ -38,5 +38,9 @@
     "#endT3" : {
         "fr": "Nous approchons la balise &lt;/body&gt; et il est temps pour moi d'y aller. Ne soyez pas triste, la vie est belle ! 🙃",
         "en": "We're really close to the &lt;/body&gt; tag and it's time for me to leave. Don't be sad, life is beautiful! 🙃"
+    },
+    "#back" : {
+        "fr": "Retour",
+        "en": "Back"
     }
 }

@@ -29,12 +29,12 @@ $(document).ready(function() {
         });
         $.getJSON("/content/articles.json", function(json) {
             $.each(json, function(id, value) {
-                $("article#"+id).animate({opacity:0},100, function() {
+                $("article#"+id).animate({opacity:0},200, function() {
                     $("article#"+id+" h3").html(value[language].title+ "<br><span class='delete'>X</span>");
                     $("article#"+id+" p").html(value[language].resume)
                     $("article#"+id+" div.keywords").empty()
                     for (var i = 0; i < value[language].keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value[language].keywords[i]+"</span>")}
-                }).animate({opacity:0.8}, 100)
+                }).animate({opacity:0.8}, 200)
             });
         });
     }
