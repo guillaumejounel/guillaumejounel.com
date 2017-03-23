@@ -42,9 +42,9 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
             }
             echo "</div></article>"; } ?>
             </article>
-            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="img/articles/ending1.png"/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
-            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="img/articles/ending2.png"/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
-            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="img/articles/ending3.png"/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="img/articles/ending1.png"/><br/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="img/articles/ending2.png"/><br/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="img/articles/ending3.png"/><br/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
     </div>
     <footer>Developed with ♡ by Guillaume Jounel <span></span></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

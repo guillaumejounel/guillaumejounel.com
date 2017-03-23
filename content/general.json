@@ -29,14 +29,14 @@
     },
     "#endT2" : {
         "fr": "Je travaille encore sur des projets que je vous partagerai d'ici quelques jours, restez connecté ! 😜",
-        "en": "I'm currently working on cool stuff I'll share with you in the coming days. Stay tunned! 😜"
+        "en": "I'm still working on cool stuff I'll share with you in the coming days. Stay tunned! 😜"
     },
     "#endt3" : {
         "fr": "La vraie fin.",
         "en": "The very end."
     },
     "#endT3" : {
-        "fr": "Nous sommes proches de la balise &lt;/body&gt; et il est temps pour moi d'y aller. Ne soyez pas triste, la vie est belle ! 🙃",
+        "fr": "Nous approchons la balise &lt;/body&gt; et il est temps pour moi d'y aller. Ne soyez pas triste, la vie est belle ! 🙃",
         "en": "We're really close to the &lt;/body&gt; tag and it's time for me to leave. Don't be sad, life is beautiful! 🙃"
     }
 }

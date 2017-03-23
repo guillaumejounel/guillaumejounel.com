@@ -58,5 +58,9 @@ $(document).ready(function() {
 
     $("article").on("click", "h3 span.delete", function() {
         $(this).parent().parent().css("display","none")
-    });
+    }).on('mouseenter', this, function() {
+        $(this).css('opacity',1);
+    }).on('mouseleave', this, function() {
+        $(this).css('opacity',0.8);
+    })
 });
