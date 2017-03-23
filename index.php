@@ -49,10 +49,11 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
             <a href="/"><nav id="back"><?php echo $general["#back"][$lang]; ?></nav></a>
             <h3><?php echo $articles[$article][$lang]["title"]; ?></h3>
 
-            <br/>
+            <div class="text">
                 <p>
                     <?php echo $articles[$article][$lang]["content"]; ?>
                 </p>
+            </div>
             <div class="keywords">
                 <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
                     echo "<span>".$keyword."</span>";
