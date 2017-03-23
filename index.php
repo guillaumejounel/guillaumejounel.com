@@ -9,8 +9,8 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title id="metatitle"><?php echo $general["#metatitle"][$lang]; ?></title>
-    <link rel="stylesheet" type="text/css" href="/guillaumejounel.com/css/style.css">
-    <link rel="stylesheet" href="/guillaumejounel.com/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 </head>
 <body>
     <div id="bg"></div>
@@ -32,7 +32,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
         foreach ($index as $i) { echo "<article id='".$i."'>"; ?>
             <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
-                <img src="/guillaumejounel.com/img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
+                <img src="/img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
                 <span class="clic"><?php echo $general[".clic"][$lang]; ?></span>
                 <p><?php echo $articles[$i][$lang]["resume"]; ?></p>
             </div>
@@ -42,25 +42,27 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "fr" ? "fr" : "en"; ?>
             }
             echo "</div></article>"; } ?>
             </article>
-            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="/guillaumejounel.com/img/articles/ending1.png"/><br/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
-            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="/guillaumejounel.com/img/articles/ending2.png"/><br/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
-            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="/guillaumejounel.com/img/articles/ending3.png"/><br/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending1.png"/><br/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending2.png"/><br/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending3.png"/><br/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
     </div>
     <div id="viewer">
         <article>
-            <span id="quitter">Quitter</span>
-            <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3>
+            <h3><?php echo $general["#endt1"][$lang]; ?></h3>
             <div class="text"><img src=""/><br/>
-                <p id="endT1">
+                <p>
                     <?php print_r($_GET); ?>
-                    <?php echo $general["#endT1"][$lang]; ?></p>
+                    <?php echo $general["#endT1"][$lang]; ?>
+                </p>
+            </div>
+            <div class="keywords">
             </div>
         </article>
     </div>
     <footer>Developed with ♡ by Guillaume Jounel <span></span></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/guillaumejounel.com/js/p5.js"></script>
-    <script type="text/javascript" src="/guillaumejounel.com/js/particle_system_plain.js"></script>
-    <script type="text/javascript" src="/guillaumejounel.com/js/content_plain.js"></script>
+    <script type="text/javascript" src="/js/p5.js"></script>
+    <script type="text/javascript" src="/js/particle_system_plain.js"></script>
+    <script type="text/javascript" src="/js/content_plain.js"></script>
 </body>
 </html>

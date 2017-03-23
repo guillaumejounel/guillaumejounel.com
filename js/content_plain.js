@@ -14,32 +14,19 @@ $(document).ready(function() {
             $("#en").css("font-weight", "bold")
             $(".CV").attr("href", "content/Resume - Guillaume Jounel.pdf")
         }
-        $.getJSON("/guillaumejounel.com/content/general.json", function(json) {
+        $.getJSON("/content/general.json", function(json) {
             $.each(json, function(id, value) {
-                if (language == "fr")
-                    $(id).fadeOut(duration, function() { $(this).html(value.fr) }).fadeIn()
-                else
-                    $(id).fadeOut(duration, function() { $(this).html(value.en) }).fadeIn()
+                $(id).fadeOut(duration, function() { $(this).html(value[language]) }).fadeIn()
             });
         });
-        $.getJSON("/guillaumejounel.com/content/articles.json", function(json) {
+        $.getJSON("/content/articles.json", function(json) {
             $.each(json, function(id, value) {
-                if (language == "fr") {
-                    $("article#"+id).animate({opacity:0},100, function() {
-                        $("article#"+id+" h3").html(value.fr.title+ "<br><span class='delete'>X</span>");
-                        $("article#"+id+" p").html(value.fr.resume)
-                        $("article#"+id+" div.keywords").empty()
-                        for (var i = 0; i < value.fr.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.fr.keywords[i]+"</span>")}
-                    }).animate({opacity:0.8}, 100)
-                } else {
-                    $("article#"+id).animate({opacity:0},100, function() {
-                        $("article#"+id+" h3").html(value.en.title+ "<br><span class='delete'>X</span>");
-                        $("article#"+id+" p").html(value.en.resume)
-                        $("article#"+id+" div.keywords").empty()
-                        for (var i = 0; i < value.en.keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value.en.keywords[i]+"</span>")}
-                    }).animate({opacity:0.8}, 100)
-
-                }
+                $("article#"+id).animate({opacity:0},100, function() {
+                    $("article#"+id+" h3").html(value[language].title+ "<br><span class='delete'>X</span>");
+                    $("article#"+id+" p").html(value[language].resume)
+                    $("article#"+id+" div.keywords").empty()
+                    for (var i = 0; i < value[language].keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value[language].keywords[i]+"</span>")}
+                }).animate({opacity:0.8}, 100)
             });
         });
     }
@@ -73,8 +60,20 @@ $(document).ready(function() {
             $(this).css("display","none")
             clic = false
         }
-        else
-            $("#viewer").css("display", "block");
+        else {
+            var id = $(this).attr("id")
+            $.getJSON("/content/articles.json", function(json) {
+                console.log(json[id][language].content)
+                $("#viewer article h3").html(json[id][language].title);
+                $("#viewer article div.text p").html(json[id][language].content);
+                $("#viewer").css("display", "block");
+                $("#viewer article div.keywords").empty()
+                $.each(json[id][language].keywords, function(id, value) {
+                    $("#viewer article div.keywords").append("<span>"+value+"</span>")
+                })
+            });
+
+        }
     }).on('mouseenter', this, function() {
         $(this).css('opacity',1);
     }).on('mouseleave', this, function() {

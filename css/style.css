@@ -359,7 +359,7 @@ a:hover {
     #viewer {
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(10px);
-        background-color: rgba(0,0,0,0.9);
+        background-color: rgba(0,0,0,0.4);
     }
 }
 
