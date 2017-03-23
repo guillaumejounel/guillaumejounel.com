@@ -16,11 +16,11 @@ $(document).ready(function() {
         if (language == "fr") {
             $("#fr").css("font-weight", "bold")
             $("#en").css("font-weight", "normal")
-            $("#CV").attr("href", "/content/CV - Guillaume Jounel.pdf")
+            $("#CV").attr("href", "/content/CV%20-%20Guillaume%20Jounel.pdf")
         } else {
             $("#fr").css("font-weight", "normal")
             $("#en").css("font-weight", "bold")
-            $("#CV").attr("href", "/content/Resume - Guillaume Jounel.pdf")
+            $("#CV").attr("href", "/content/Resume%20-%20Guillaume%20Jounel.pdf")
         }
         $.getJSON("/content/general.json", function(json) {
             $.each(json, function(id, value) {

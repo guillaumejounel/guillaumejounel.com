@@ -20,7 +20,7 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
     <div id="bg"></div>
     <header>
         <p>Guillaume <span>Jounel</span></p>
-        <div id="social"><a href="mailto:gjounel@gmail.com"><i class='fa fa-envelope-o' aria-hidden='true'></i></a><a href="https://github.com/guillaumejounel" target="_blank"><i class='fa fa-github' aria-hidden='true'></i></a><a href="https://linkedin.com/in/guillaumejounel" target="_blank"><i class='fa fa-linkedin' aria-hidden='true'></i></a><a href="https://facebook.com/guillaumejounel" target="_blank"><i class='fa fa-facebook' aria-hidden='true'></i></a><a href="https://twitter.com/guillaumejounel" target="_blank"><i class='fa fa-twitter' aria-hidden='true'></i></a><a id="CV" href="<?php if($lang=="fr") { echo "content/CV - Guillaume Jounel.pdf"; } else { echo "content/Resume - Guillaume Jounel.pdf"; } ?>" target="_blank"><i class='fa fa-file-text-o' aria-hidden='true'></i></a></div>
+        <div id="social"><a href="mailto:gjounel@gmail.com"><i class='fa fa-envelope-o' aria-hidden='true'></i></a><a href="https://github.com/guillaumejounel" target="_blank"><i class='fa fa-github' aria-hidden='true'></i></a><a href="https://linkedin.com/in/guillaumejounel" target="_blank"><i class='fa fa-linkedin' aria-hidden='true'></i></a><a href="https://facebook.com/guillaumejounel" target="_blank"><i class='fa fa-facebook' aria-hidden='true'></i></a><a href="https://twitter.com/guillaumejounel" target="_blank"><i class='fa fa-twitter' aria-hidden='true'></i></a><a id="CV" href="<?php if($lang=="fr") { echo "content/CV%20-%20Guillaume%20Jounel.pdf"; } else { echo "content/Resume%20-%20Guillaume%20Jounel.pdf"; } ?>" target="_blank"><i class='fa fa-file-text-o' aria-hidden='true'></i></a></div>
     </header>
     <div id="blurred">
         <section>
@@ -36,7 +36,7 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
         foreach ($index as $i) { echo "<a href='/$lang/".$i."/".$articles[$i]['image']."'><article id='".$i."'>"; ?>
             <h3><?php echo $articles[$i][$lang]["title"]."<br/>"; ?><span class="delete">X</span></h3>
             <div class="text">
-                <img src="/img/articles/<?php echo $articles[$i]["image"]; ?>.png"/>
+                <img src="/img/articles/<?php echo $articles[$i]["image"]; ?>.png" alt="<?php echo $articles[$i]["image"]; ?>"/>
                 <span class="clic"><?php echo $general[".clic"][$lang]; ?></span>
                 <p><?php echo $articles[$i][$lang]["resume"]; ?></p>
             </div>
@@ -45,16 +45,17 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
                 echo "<span>".$keyword."</span>";
             }
             echo "</div></article></a>"; } ?>
-            </article>
-            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending1.png"/><br/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
-            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending2.png"/><br/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
-            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending3.png"/><br/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt1"><?php echo $general["#endt1"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending1.png" alt="fin1"/><br/><p id="endT1"><?php echo $general["#endT1"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt2"><?php echo $general["#endt2"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending2.png" alt="fin2"/><br/><p id="endT2"><?php echo $general["#endT2"][$lang]; ?></p></div></article>
+            <article> <h3 id="endt3"><?php echo $general["#endt3"][$lang]; ?></h3><div class="text"><img src="/img/articles/ending3.png" alt="fin3"/><br/><p id="endT3"><?php echo $general["#endT3"][$lang]; ?></p></div></article>
     </div>
     <div id="viewer" <?php if (isset($article)) echo "style='display:block'"; ?>>
         <article>
             <a href="/"><nav id="back"><?php echo $general["#back"][$lang]; ?></nav></a>
-            <h3><?php echo $articles[$article][$lang]["title"]; ?></h3>
-
+            <h3><?php if(isset($article))
+                    echo $articles[$article][$lang]["title"];
+                    else
+                    echo "No article loaded"; ?></h3>
             <div class="text">
                 <p>
                     <?php echo $articles[$article][$lang]["content"]; ?>
