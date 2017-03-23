@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('body').css('background', 'white')
+    $("#content article h3 span.delete").css("display", "block")
     var duration = 300;
     var url = window.location.toString().split("/");
     var language = $("#en").css("font-weight")=="bold" ? "en" : "fr"
@@ -69,6 +70,7 @@ $(document).ready(function() {
         if (clic) {
             $(this).css("display","none")
             clic = false
+            return false
         }
         else {
             var i = $(this).attr("id")
@@ -85,7 +87,6 @@ $(document).ready(function() {
                 window.history.pushState(document.title,document.title,language+"/"+json[i].image);
                 return false
             });
-
             return false
         }
     }).on('mouseenter', this, function() {

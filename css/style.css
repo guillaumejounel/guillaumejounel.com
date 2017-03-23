@@ -226,6 +226,7 @@ a:hover {
 
 #content article h3 span.delete {
     position: absolute;
+    display:none;
     top: 0px;
     right: 10px;
     color: gray;
