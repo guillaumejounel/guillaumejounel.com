@@ -167,14 +167,18 @@ a:hover {
      text-decoration: none;
 }
 
-#introduction a {
+#introduction a, #viewer a {
     border-bottom: rgba(50,50,50,.1) solid 2px;
     color: rgb(50,50,50);
 }
 
-#introduction a:hover {
+#introduction a:hover, #viewer a:hover {
     border-bottom: rgba(50,50,50,.2) solid 2px;
     color: black;
+}
+
+#viewer .go {
+    font-weight: bold;
 }
 
 #content {
@@ -247,6 +251,14 @@ a:hover {
     float:left;
 }
 
+#viewer article img {
+    width:80%;
+    position: relative;
+    left:10%;
+    margin: 20px 0px 20px 0px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2)
+}
+
 #content article div.text {
     position:relative;
     font-weight: 100;
@@ -277,9 +289,12 @@ a:hover {
     overflow: hidden;
 }
 
+#content article div.keywords span {
+    z-index: -1;
+}
+
 #content article div.keywords span, #viewer article div.keywords span {
     position: relative;
-    z-index: -1;
     padding: 3px 7px 3px 7px;
     margin:0px 0px 3px 5px;
     background-color: rgba(0,0,0,0.15);
@@ -299,7 +314,7 @@ a:hover {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-color: rgba(0,0,0,0.95);
+    background-color: rgba(0,0,0,0.4);
 }
 
 #viewer article {
@@ -350,10 +365,10 @@ a:hover {
 
 #viewer article div.text {
     position: absolute;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     bottom: 50px;
-    top: 55px;
+    top: 65px;
     overflow: scroll;
     text-indent: 10px;
     line-height: 150%;
@@ -447,7 +462,6 @@ a:hover {
     #viewer {
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(10px);
-        background-color: rgba(0,0,0,0.4);
     }
 }
 

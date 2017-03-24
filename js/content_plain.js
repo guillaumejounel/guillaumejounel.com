@@ -31,7 +31,7 @@ $(document).ready(function() {
             $.each(json, function(id, value) {
                 $("#content article#"+id).animate({opacity:0},200, function() {
                     $("#content article#"+id+" h3").html(value[language].title+ "<span class='delete' style='display:block'>X</span>");
-                    $("#content article#"+id+" div.text p").html(value[language].resume)
+                    $("#content article#"+id+" div.text").html(value[language].resume)
                     $("#content article#"+id+" div.keywords").empty()
                     for (var i = 0; i < value[language].keywords.length; i++) {$("article#"+id+" div.keywords").append("<span>"+value[language].keywords[i]+"</span>")}
                 }).animate({opacity:0.8}, 200)
@@ -83,7 +83,7 @@ $(document).ready(function() {
             var i = $(this).attr("id")
             $.getJSON("/content/articles.json", function(json) {
                 $("#viewer article h3").html(json[i][language].title);
-                $("#viewer article div.text p").html(json[i][language].content);
+                $("#viewer article div.text").html(json[i][language].content);
                 $("#viewer").css("display", "block");
                 $("#viewer article div.keywords").empty()
                 $.each(json[i][language].keywords, function(id, value) {

@@ -57,9 +57,7 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
                     else
                     echo "No article loaded"; ?></h3>
             <div class="text">
-                <p>
-                    <?php echo $articles[$article][$lang]["content"]; ?>
-                </p>
+                <?php echo $articles[$article][$lang]["content"]; ?>
             </div>
             <div class="keywords">
                 <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
@@ -72,6 +70,6 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/p5.js"></script>
     <script type="text/javascript" src="/js/particle_system.js"></script>
-    <script type="text/javascript" src="/js/content.js"></script>
+    <script type="text/javascript" src="/js/content_plain.js"></script>
 </body>
 </html>
