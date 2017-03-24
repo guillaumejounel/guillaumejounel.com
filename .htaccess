@@ -1,5 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine On
+
+RewriteCond %{Request_URI} !/autoecole/?
 RewriteRule ^([A-Za-z-]+)/?$ index.php?langue=$1 [L]
 RewriteRule ^([A-Za-z-]+)/([0-9]+)/?.*$ index.php?langue=$1&article=$2 [L]
 
