@@ -459,10 +459,6 @@ a:hover {
         backdrop-filter: blur(2px);
         background-color: rgba(255,255,255,0.1);
     }
-    #viewer {
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(10px);
-    }
 }
 
 footer {
