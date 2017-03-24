@@ -270,13 +270,16 @@ a:hover {
     margin-top: 5px;
 }
 
-#content article div.keywords, #viewer article div.keywords  {
-    padding:5px 5px 0px 5px;
+#content article div.keywords, #viewer article div.keywords {
+    padding:2px 5px 5px 5px;
+    width:95%;
+    box-shadow: inset -10px 0px 10px white;
+    overflow: hidden;
 }
 
-#content article div.keywords span, #viewer article div.keywords span{
-    display: block;
-    float:left;
+#content article div.keywords span, #viewer article div.keywords span {
+    position: relative;
+    z-index: -1;
     padding: 3px 7px 3px 7px;
     margin:0px 0px 3px 5px;
     background-color: rgba(0,0,0,0.15);
@@ -285,6 +288,7 @@ a:hover {
     font-weight: bold;
     font-size: 70%;
     color:white;
+    white-space: nowrap;
 }
 
 #viewer {
