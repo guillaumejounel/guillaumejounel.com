@@ -252,9 +252,9 @@ a:hover {
 }
 
 #viewer article img {
-    width:80%;
     position: relative;
-    left:10%;
+    left:0%;
+    width:100%;
     margin: 20px 0px 20px 0px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2)
 }
@@ -339,9 +339,10 @@ a:hover {
     font-weight: 200;
     text-transform: uppercase;
     padding:5px;
+    background-color: white;
     color: rgba(0,0,0,0.3);
     border-radius: 7px;
-    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.1)
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.1), 10px 0px 5px white, -10px 0px 5px white;
 }
 
 #viewer article #back:hover {
@@ -354,6 +355,8 @@ a:hover {
     margin: 0px 0px 0px 0px;
     line-height: 150%;
     padding-left: 3%;
+    white-space: nowrap;
+    overflow: hidden;
     margin-top:5px;
     font-size: 200%;
     background-color: white;
@@ -376,14 +379,18 @@ a:hover {
 
 #viewer article div.keywords {
     position:absolute;
-    bottom:10px; left: 10px;
+    display: block;
+    bottom:10px;
+    left: 10px;
+    width:90%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #viewer article div.keywords span {
-    display: block;
-    float:left;
+    display: inline-block;
     padding: 3px 7px 3px 7px;
-    margin:0px 0px 3px 5px;
+    margin: 0px 0px 3px 5px;
     background-color: rgb(200, 200, 200);
     border-radius:15px;
     cursor: pointer;
@@ -435,6 +442,10 @@ a:hover {
     #blurred {
         padding:1px 15% 1px 15%;
         width:70%;
+    }
+    #viewer article img {
+        left:10%;
+        width:80%;
     }
 }
 
