@@ -71,6 +71,6 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
     <script type="text/javascript" src="/js/p5.js"></script>
     <script type="text/javascript" src="/js/particle_system.js"></script>
     <script type="text/javascript" src="/js/content_plain.js"></script>
-    <?php include_once('/analytics.php'); ?>
+    <?php include('analytics.php'); ?>
 </body>
 </html>
