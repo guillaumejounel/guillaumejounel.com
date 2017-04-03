@@ -181,6 +181,15 @@ a:hover {
     font-weight: bold;
 }
 
+#viewer h4 {
+    font-size: 120%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666;
+    padding: 3px 10px 0px 10px;
+    text-indent: 0px;
+    box-shadow: 10px 0px 0px white, -10px 0px 0px white,0px 0px 8px rgba(0,0,0,0.1);
+}
 #content {
     position: relative;
     display: block;
