@@ -85,6 +85,7 @@ $(document).ready(function() {
                 $("#viewer article h3").html(json[i][language].title);
                 $("#viewer article div.text").html(json[i][language].content);
                 $("#viewer").css("display", "block");
+                $("#viewer .text").scrollTop(0);
                 $("#viewer article div.keywords").empty()
                 $.each(json[i][language].keywords, function(id, value) {
                     $("#viewer article div.keywords").append("<span>"+value+"</span>")
