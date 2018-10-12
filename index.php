@@ -7,8 +7,9 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title id="metatitle"><?php echo $general["#metatitle"][$lang]; ?></title>
-    <meta name="keywords" content="Developer, UTC, French, Software, UIUC, San Francisco, Bay Area, Internship">
+    <meta name="keywords" content="Developer, UTC, French, Software, Computer Science, UIUC, San Francisco, Bay Area, Internship, Berkeley, Compiègne">
     <meta name="description" content="<?php echo $general["#description"][$lang]; ?>">
+    <meta name="author" content="Guillaume Jounel">
     <meta property="og:image" content="/img/og-image.jpg">
     <meta property="og:image:width" content="1648">
     <meta property="og:image:height" content="863">
@@ -62,7 +63,7 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
                 <?php echo $articles[$article][$lang]["content"]; ?>
             </div>
             <div class="keywords">
-                <?php foreach ($articles[$i][$lang]["keywords"] as $keyword) {
+                <?php foreach ($articles[$article][$lang]["keywords"] as $keyword) {
                     echo "<span>".$keyword."</span>";
                 } ?>
             </div>
