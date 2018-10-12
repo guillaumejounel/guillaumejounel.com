@@ -7,11 +7,13 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title id="metatitle"><?php echo $general["#metatitle"][$lang]; ?></title>
+    <meta name="keywords" content="Developer, UTC, French, Software, UIUC, San Francisco, Bay Area, Internship">
+    <meta name="description" content="<?php echo $general["#description"][$lang]; ?>">
     <meta property="og:image" content="/img/og-image.jpg">
     <meta property="og:image:width" content="1648">
     <meta property="og:image:height" content="863">
     <meta property="og:title" content="Guillaume Jounel - CS Engineering Student">
-    <meta property="og:description" content="Looking for a 6-Month Software Engineer Internship.">
+    <meta property="og:description" content="<?php echo $general["#description"][$lang]; ?>">
     <meta property="og:url" content="http://guillaumejounel.com">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
