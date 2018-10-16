@@ -73,7 +73,7 @@ if (isset($_GET["article"])) $article = htmlspecialchars($_GET["article"], ENT_Q
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/p5.js"></script>
     <script type="text/javascript" src="/js/particle_system.js"></script>
-    <script type="text/javascript" src="/js/content_plain.js"></script>
+    <script type="text/javascript" src="/js/content.js"></script>
     <?php include('analytics.php'); ?>
 </body>
 </html>

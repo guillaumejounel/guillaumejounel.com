@@ -26,47 +26,42 @@ function Particle(location) {
     }
 
     this.distance = function (particle) {
-        distance = p5.Vector.sub(this.location, particle.location)
-        return distance.mag()
+        return ((this.location.x - particle.location.x)*(this.location.x - particle.location.x)
+            + (this.location.y - particle.location.y)*(this.location.y - particle.location.y))
     }
 
     this.connect = function() {
+        strokeWeight(.5);
 
-        //fill(100,0,0)
-        beginShape()
         for (j=0; j<particles.length-1; j++) {
             temp = this.distance(particles[j])
-            if (temp < minimum && temp > 10) {
-                vertex(this.location.x, this.location.y, 0)
-                vertex(particles[j].location.x, particles[j].location.y, 0)
+            if (temp < 3500) {
+                line(this.location.x, this.location.y, 0, particles[j].location.x, particles[j].location.y, 0);
             }
         }
-        endShape()
     }
 }
 
 var minimum = 65
 function setup() {
-    var canvas = createCanvas(windowWidth,windowHeight, WEBGL)
+    console.log("Hey there! Welcome to my website. :)")
+    p5.disableFriendlyErrors = true;
+    var canvas = createCanvas(windowWidth, windowHeight, WEBGL)
     canvas.parent('bg');
-    nbparticules = height*width/2000;
-    if (nbparticules > 500) { nbparticules = 500 }
-    for (i=1; i<nbparticules; i++) {
+    nbparticles = height*width/2500;
+    if (nbparticles > 500) { nbparticles = 500 }
+    for (i=1; i<nbparticles; i++) {
         particles.push(new Particle(createVector(random(width), random(height))))
     }
 }
 
 var testperf = true;
 var eligible = true;
-var timelimit = 200;
 var maxtest = 0;
 var r=0;
+var sum=0;
 function draw() {
     if (eligible) {
-        if (testperf) {
-            var start = new Date();
-            r+=1
-        }
         particles[0].location.x = mouseX;
         particles[0].location.y = mouseY;
         translate(-width/2,-height/2,0);
@@ -75,14 +70,17 @@ function draw() {
             particles[i].run()
         }
         if (testperf) {
-            var end = new Date();
-            var perf = new Date() - start;
-            if (perf > timelimit)
-                eligible = false
-            if (perf > maxtest)
-                maxtest = perf
-            if (r > 50)
-                testperf = false
+            r+=1
+            if (r >= 10) {
+                sum += frameRate()
+                if (r == 20) {
+                    testperf = false
+                    if (sum < 100) {
+                        eligible = false
+                        console.log("Animated background disabled due to poor performance.")
+                    }
+                }
+            }
         }
     }
 }
